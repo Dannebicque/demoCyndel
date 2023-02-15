@@ -12,6 +12,8 @@ class TestTraceController extends AbstractController
     #[Route('/test/trace', name: 'app_test_trace')]
     public function index(TraceRegistry $traceRegistry): Response
     {
+        dump($traceRegistry->getTypeTraces());
+        //die();
         return $this->render('test_trace/index.html.twig', [
             'traces' => $traceRegistry->getTypeTraces(),
         ]);
@@ -23,7 +25,9 @@ class TestTraceController extends AbstractController
         string $typeTrace): Response
     {
         $trace = $traceRegistry->getTypeTrace($typeTrace);
-        return $this->render('test_trace/show.html.twig', [
+        dump($trace);
+//        die();
+        return $this->render($trace::TEMPLATE, [
             'trace' => $trace,
         ]);
     }
