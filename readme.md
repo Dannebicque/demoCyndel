@@ -37,3 +37,17 @@ La méthode show, récupère le type en question et affiche un texte spécifique
 Ce qui est intéressant à noter c'est que tout le code du contrôleur n'a pas besoin de savoir de quel type on parle, il fonctionnera toujours.
 
 Avec ce système on pourrait ajouter facilement des types. Ils seraient automatiquement pris en compte.
+
+# Exemple de fichier de réponse de PHP
+
+```php
+<?php
+
+$tab = [
+    'annebi01' => ['nom' => 'Annebicque', 'prenom' => 'Jean', 'age' => 25],
+];
+
+header('Content-Type: application/json; charset=utf-8');
+echo json_encode($tab);
+
+```
