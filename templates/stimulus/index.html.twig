@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello StimulusController!{% endblock %}
+
+{% block body %}
+    <h1>Stimulus Demonstration</h1>
+
+    <div {{ stimulus_controller('demonstration', {
+        url: path('app_stimulus_show')
+    }) }}
+            {#   équivalent à : data-controller="demonstration" #}
+            {#   avec une value sur le controleur  : data-demonstration-url-value="/stimulus/show" #}
+    >
+        Mon div avec Stimulus
+
+
+        <button
+                {{ stimulus_action('demonstration', 'clicBouton', 'click') }}
+                {#    équivalent à            data-action="click->demonstration#clicBouton" #}
+        >Clique ici !
+        </button>
+
+        <button
+                {{ stimulus_action('demonstration', 'clicBoutonAvecParam', 'click', {'id': 3}) }}
+                {#    équivalent à            data-action="click->demonstration#clicBouton" #}
+                {#    avec un paramètre       data-demonstration-id-param="3" #}
+        >Clique ici (avec paramètre) !
+        </button>
+        <div>
+            <input type="text" id="inputTexte" {{ stimulus_target('demonstration', 'texte') }}>
+            <button
+                    {{ stimulus_action('demonstration', 'clicBoutonAvecInput', 'click', {
+                        urlbouton: path('app_stimulus_deux'),
+                    }) }}
+            >Clique ici (avec lecture de l'input) !
+            </button>
+        </div>
+
+        <div {{ stimulus_target('demonstration', 'zone') }}
+                {#   équivalent à            data-demonstration-target="zone" #}
+        >
+            Zone à afficher/masquer
+        </div>
+
+    </div>
+{% endblock %}

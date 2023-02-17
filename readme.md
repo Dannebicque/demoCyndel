@@ -51,3 +51,37 @@ header('Content-Type: application/json; charset=utf-8');
 echo json_encode($tab);
 
 ```
+
+# Stimulus
+
+## Webpack Encore
+
+composer require webpack-encore  (pour gérer le JS et le CSS/SCSS)
+
+npm install (pour installer les dépendances) (ou npm install --force pour forcer l'installation)
+yarn install (pour installer les dépendances) (ou yarn install --force pour forcer l'installation)
+
+puis npm run watch (ou yarn watch)
+
+https://ux.symfony.com/
+
+* Assets/controllers => va contenir les controllers Stimulus
+* controllers.json => va contenir les librairies stilmulus qu'on ajoute (live-component, etc.)
+
+### Associer un contrôleur Stimulus au HTML
+
+```twig
+ <div {{ stimulus_controller('demonstration') }}>
+        Mon div avec Stimulus
+    </div>
+```
+
+Le code minimal d'un controller Stimulus est le suivant
+
+```js
+import { Controller } from '@hotwired/stimulus';
+
+export default class extends Controller {
+
+}
+```
