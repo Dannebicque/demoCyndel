@@ -1,0 +1,8 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ComponentController!{% endblock %}
+
+{% block body %}
+{{ component('random_number', {max:500}) }}
+
+{% endblock %}

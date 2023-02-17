@@ -64,6 +64,8 @@ yarn install (pour installer les dépendances) (ou yarn install --force pour for
 puis npm run watch (ou yarn watch)
 
 https://ux.symfony.com/
+https://stimulus.hotwired.dev/handbook/introduction
+
 
 * Assets/controllers => va contenir les controllers Stimulus
 * controllers.json => va contenir les librairies stilmulus qu'on ajoute (live-component, etc.)
@@ -85,3 +87,12 @@ export default class extends Controller {
 
 }
 ```
+
+# LiveComponent
+
+composer require symfony/ux-live-component (installe le twigcomponent en même temps)
+
+npm install (pour installer les dépendances) (ou npm install --force pour forcer l'installation)
+yarn install (pour installer les dépendances) (ou yarn install --force pour forcer l'installation)
+
+puis npm run watch (ou yarn watch)
