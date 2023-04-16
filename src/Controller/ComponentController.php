@@ -8,10 +8,10 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ComponentController extends AbstractController
 {
-    #[Route('/component', name: 'app_component')]
-    public function index(): Response
-    {
-        return $this->render('component/index.html.twig', [
-        ]);
-    }
+//    #[Route('/component', name: 'app_component')]
+//    public function index(): Response
+//    {
+//        return $this->render('component/index.html.twig', [
+//        ]);
+//    }
 }

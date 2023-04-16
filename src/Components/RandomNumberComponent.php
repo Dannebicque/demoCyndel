@@ -16,12 +16,12 @@ class RandomNumberComponent extends AbstractController
     #[LiveProp(writable: true)]
     public string $keyword = '';
 
-    public function __construct(private BlogRepository $blogRepository)
-    {
-    }
-
-    public function getRandomNumber(): int
-    {
-        return $this->blogRepository->findBy(['titre' => '%'.$this->keyword.'%']);
-    }
+//    public function __construct(private BlogRepository $blogRepository)
+//    {
+//    }
+//
+//    public function getRandomNumber(): int
+//    {
+//        return $this->blogRepository->findBy(['titre' => '%'.$this->keyword.'%']);
+//    }
 }
